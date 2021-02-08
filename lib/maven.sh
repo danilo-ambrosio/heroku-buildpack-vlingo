@@ -116,10 +116,8 @@ We're sorry this build is failing! If you can't find the issue in application co
 please submit a ticket so we can help: https://help.heroku.com/"
   fi
 
-  echo "Before last lines"
   mtime "mvn.${scope}.time" "${start}"
   mtime "mvn.${scope}.time.cache.${cache_status}" "${start}"
-  echo "Done!"
 }
 
 write_mvn_profile() {
@@ -133,12 +131,10 @@ EOF
 }
 
 remove_mvn() {
-  echo "Removing Maven"
   local home=${1}
   local mavenInstallDir=${2}
   if has_maven_wrapper $home; then
     cache_copy ".m2/wrapper" "$home" "$mavenInstallDir"
     rm -rf "$home/.m2"
   fi
-  echo "Removal successful!!"
 }
