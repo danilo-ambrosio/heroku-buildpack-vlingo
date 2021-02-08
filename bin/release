@@ -6,7 +6,7 @@ if [ ! -f $BUILD_DIR/Procfile ] && [ -d $BUILD_DIR/target ]; then
   cd $BUILD_DIR
   for jarFile in $(find target -maxdepth 1 -name "*.jar" -type f); do    
       echo "default_process_types:"
-      echo "  web: java -Dserver.port=\$PORT \$JAVA_OPTS -jar $jarFile $PORT"
+      echo "  web: java \$JAVA_OPTS -jar $jarFile \$PORT"
     break;
   done
 fi
