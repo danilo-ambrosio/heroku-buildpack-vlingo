@@ -140,4 +140,5 @@ remove_mvn() {
     cache_copy ".m2/wrapper" "$home" "$mavenInstallDir"
     rm -rf "$home/.m2"
   fi
+  echo "Removal successful!!"
 }
