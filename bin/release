@@ -1,7 +1,5 @@
 BUILD_DIR=$1
 
-source $BP_DIR/lib/frameworks.sh
-
 echo "---"
 
 if [ ! -f $BUILD_DIR/Procfile ] && [ -d $BUILD_DIR/target ]; then
